@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { FaUpload } from "react-icons/fa";
+import { FaUpload, FaFileUpload } from "react-icons/fa";
 
 const UploadCard = () => {
   const [file, setFile] = useState(null);
-  const [summary, setSummary] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleFileChange = (e) => setFile(e.target.files[0]);
@@ -17,10 +16,10 @@ const UploadCard = () => {
     formData.append("file", file);
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/api/upload/", formData, {
+      await axios.post("http://127.0.0.1:8000/api/upload/", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      setSummary(res.data.summary);
+      alert("File uploaded and summarized successfully!");
     } catch (err) {
       console.error(err);
       alert("Error uploading file");
@@ -29,34 +28,81 @@ const UploadCard = () => {
   };
 
   return (
-    <motion.div
-      className="bg-white rounded-2xl shadow-2xl p-8 w-[400px] text-center"
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-    >
-      <h1 className="text-2xl font-bold text-indigo-600 mb-6">AI Study Buddy</h1>
-
-      <input
-        type="file"
-        accept="application/pdf"
-        onChange={handleFileChange}
-        className="mb-4"
-      />
-      <button
-        onClick={handleUpload}
-        disabled={loading}
-        className="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-2 rounded-lg flex items-center justify-center gap-2 mx-auto"
+    <div className="text-center">
+      <motion.h1
+        className="text-4xl font-bold text-white mb-8 tracking-tight"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
       >
-        <FaUpload /> {loading ? "Summarizing..." : "Upload & Summarize"}
-      </button>
+        AI Study Buddy
+      </motion.h1>
 
-      {summary && (
-        <div className="mt-6 bg-gray-100 p-4 rounded-lg text-left">
-          <h2 className="font-semibold text-lg mb-2 text-indigo-700">Summary:</h2>
-          <p className="text-gray-700 text-sm">{summary}</p>
-        </div>
-      )}
-    </motion.div>
+      <motion.div
+        className="text-white text-lg mb-8 max-w-2xl mx-auto text-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
+        <p className="mb-6 font-semibold">Discover how AI Study Buddy can revolutionize your study and work routine:</p>
+        <ul className="list-none space-y-3 text-left inline-block">
+          <li className="flex items-start gap-2">
+            <span className="text-blue-300 font-bold w-4 flex-shrink-0">•</span>
+            <span>Upload PDF documents for instant AI-powered summaries, saving you hours of reading.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-blue-300 font-bold w-4 flex-shrink-0">•</span>
+            <span>Get key insights and main points extracted automatically, perfect for quick reviews.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-blue-300 font-bold w-4 flex-shrink-0">•</span>
+            <span>Ideal for students preparing for exams, professionals analyzing reports, and researchers skimming literature.</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-blue-300 font-bold w-4 flex-shrink-0">•</span>
+            <span>Secure and fast processing ensures your documents are handled with care and efficiency.</span>
+          </li>
+        </ul>
+      </motion.div>
+
+      <motion.div
+        className="flex gap-4 justify-center items-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+      >
+        <motion.label
+          htmlFor="file-upload"
+          className="cursor-pointer bg-white/20 hover:bg-white/30 text-white px-6 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border border-white/20 flex items-center justify-center gap-3"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <FaFileUpload />
+          Choose PDF file
+        </motion.label>
+        <input
+          id="file-upload"
+          type="file"
+          accept="application/pdf"
+          onChange={handleFileChange}
+          className="hidden"
+        />
+
+        <motion.button
+          onClick={handleUpload}
+          disabled={loading}
+          className="bg-white/20 hover:bg-white/30 text-white px-6 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 border border-white/20"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <FaUpload />
+          {loading ? "Summarizing..." : "Upload & Summarize"}
+        </motion.button>
+      </motion.div>
+    </div>
   );
 };
 
