@@ -33,16 +33,21 @@ cd ai-study-buddy
 
 ### 2️⃣ Backend Setup (Django)
 a. Activate Virtual Environment
+Install the venv environment
+python -m venv venv
+
 # Windows
 venv\Scripts\activate
 
 b. Navigate to backend folder
 cd backend
 
-c. Install dependencies
+c. Install dependencies for backend
 pip install -r requirements.txt
 pip install pymongo
 pip install requests
+pip install django djangorestframework django-cors-headers pyMuPDF
+pip install fitz
 
 
 d. Set up environment variables
