@@ -41,6 +41,9 @@ cd backend
 
 c. Install dependencies
 pip install -r requirements.txt
+pip install pymongo
+pip install requests
+
 
 d. Set up environment variables
 
@@ -49,6 +52,25 @@ Create a .env file inside the backend folder with the following content:
 OPENROUTER_API_KEY= your_api_key_here
 MONGO_URI= your_mongodb_connection_string
 
+Fix VS Code environment injection warning
+
+You got this message:
+
+An environment file is configured but terminal environment injection is disabled.
+
+That’s from VS Code’s Python extension.
+
+To fix it:
+
+Open VS Code Settings (Ctrl + ,)
+
+Search for:
+
+python.terminal.useEnvFile
+
+
+✅ Enable (turn on) that setting.
+Then restart VS Code (or at least close and reopen the integrated terminal).
 
 ⚠️ Note: Make sure python-dotenv is installed and loaded in settings.py.
 
