@@ -20,27 +20,6 @@ This project combines:
 ✅ MongoDB integration for data storage  
 ✅ Easy to run locally using virtual environments  
 
----
-
-## 🛠️ Project Structure
-
-ai-study-buddy/
-│
-├── backend/ # Django backend
-│ ├── manage.py
-│ ├── backend/ # Django project settings
-│ └── summarizer/ # App for summarization logic
-│
-├── frontend/ # React frontend (Vite)
-│ ├── src/
-│ └── package.json
-│
-├── venv/ # Python virtual environment
-│
-└── README.md
-
-
----
 
 ## ⚙️ Setup Instructions
 
