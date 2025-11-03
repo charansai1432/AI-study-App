@@ -13,17 +13,17 @@ This project combines:
 
 ##  Features
 
-✅ Upload PDF or text files for summarization  
-✅ AI-powered content summarization (Gemini model)  
-✅ Simple, responsive React UI  
-✅ REST API built with Django  
-✅ MongoDB integration for data storage  
-✅ Easy to run locally using virtual environments  
+ Upload PDF or text files for summarization  
+ AI-powered content summarization (Gemini model)  
+ Simple, responsive React UI  
+ REST API built with Django  
+ MongoDB integration for data storage  
+ Easy to run locally using virtual environments  
 
 
 ##  Setup Instructions
 
-Follow these steps to run the project locally 👇
+Follow these steps to run the project locally 
 
 ### 1️ Clone the repository
 ```bash
@@ -99,7 +99,7 @@ c. Run frontend development server
 npm run dev
 
 
-The frontend will usually start at 👉 http://localhost:5173/
+The frontend will usually start at  http://localhost:5173/
 
 4️ Access the App
 
