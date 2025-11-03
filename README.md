@@ -107,4 +107,4 @@ Once both servers are running:
 
 Frontend: http://localhost:5173
 
-Backend API: http://127.0.0.1:8000/api/
+Backend API: http://127.0.0.1:8000 (which display the output Welcome to AI-Study-Buddy application)
