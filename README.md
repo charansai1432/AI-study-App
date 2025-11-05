@@ -48,6 +48,7 @@ pip install pymongo
 pip install requests
 pip install django djangorestframework django-cors-headers pyMuPDF
 pip install fitz
+pip install dotenv
 
 
 d. Set up environment variables
@@ -108,3 +109,10 @@ Once both servers are running:
 Frontend: http://localhost:5173
 
 Backend API: http://127.0.0.1:8000 (which display the output Welcome to AI-Study-Buddy application)
+
+Contributed by
+    -  Charan sai (Backend part)                - https://www.github.com/charansai1432
+    -  H R Kruthika (Backend Part)              - https://www.github.com/Kruthikaramesh
+    -  K. Mahesh (Frontend part)                - https://www.github.com/Maheshroyce
+    - Mahammad Mujeeb (Frontend Part)           - https://www.github.com/MUJEEB76
+    -  sahana (frontend and documentation Part) - https://www.github.com/Sandyaramu
