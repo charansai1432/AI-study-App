@@ -25,7 +25,7 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-white text-xl font-bold mb-4 flex items-center justify-center gap-2">
-            Developed with <Heart className="w-5 h-5 text-red-400 fill-red-400" /> by Our Team
+            Developed with  by Our FutureForge Team
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {teamMembers.map((member, index) => (
